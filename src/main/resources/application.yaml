@@ -1,3 +1,18 @@
+server:
+  port : 8080
+
 spring:
   application:
     name: pms-toy
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pms_toy
+    username: ihanho
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  mybatis:
+    mapper-location: classpath:mapper/**/*.xml
+    type-aliases-package: com.example.pms_toy
+    configration:
+      map-underscore-to-camel-case: true
