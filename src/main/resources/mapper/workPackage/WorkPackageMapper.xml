@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pms_toy.api.workPackage.mapper.WorkPackageMapper">
+
+    <insert id="insertWorkPackage" useGeneratedKeys="true" keyProperty="workPackageId" keyColumn="work_package_id">
+        /* workerPackageMapper.insertWorkPackage */
+        INSERT INTO public.tb_work_package (
+          title,
+          "content",
+          work_type,
+          work_status,
+          manage_id,
+          manage_group_id,
+          start_date,
+          end_date,
+          create_id,
+          create_dt
+        )
+        VALUES(
+          #{title},
+          #{content},
+          #{workType},
+          #{workStatus},
+          #{manageId},
+          #{manageGroupId},
+          #{startDate},
+          #{endDate},
+          #{createId},
+          now()
+        )
+    </insert>
+
+</mapper>
